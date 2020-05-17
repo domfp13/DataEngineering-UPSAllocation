@@ -44,8 +44,8 @@ def sub(project_id, subscription_name) -> list:
             ack_ids.append(received_message.ack_id)
 
     # Acknowledges the received messages so they will not be sent again.
-    if len(ack_ids)!=0:
-        subscriber.acknowledge(subscription_path, ack_ids)
+    # if len(ack_ids)!=0:
+    #     subscriber.acknowledge(subscription_path, ack_ids)
 
     subscriber.close()
 
