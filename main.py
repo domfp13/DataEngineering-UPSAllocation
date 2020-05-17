@@ -1,21 +1,33 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Created by Luis Fuentes  
-# To run: python main.py C:\Users\lf188653\Desktop\Data\global\UPS_ALLOCATION
+# To run: python main.py
 
 from __future__ import annotations
 from typing import Optional
-from ETL.DBConn import SQLServerConn, OracleConnection
-from ETL.GeneralFunctions import get_files_in_directory, check_if_list_Null, clean_string, is_int, to_gcs_bucket, delete_processed_file
+from etl.DBConn import SQLServerConn, OracleConnection
+from etl.GeneralFunctions import (get_files_in_directory, check_if_list_Null, clean_string, is_int, 
+                                  to_gcs_bucket, delete_processed_file, sub, download_blob)
 from sqlalchemy.sql import text
 from openpyxl import load_workbook #xlsx files
 from openpyxl.styles import Font, Fill, PatternFill
+from pathlib import Path
+from os.path import basename
+from os import getcwd
 import sys
 
 if __name__ == "__main__":
 
     try:
-        files_directory_path: str = sys.argv[1] #Gets the first parameter passed over to the executable
+
+        files_directory_path = Path(getcwd(),'data')
+        
+        files_to_process = sub('microstrategyit','DataEngineering-appusma206_apps_sub')
+
+        if len(files_to_process) != 0:
+            for _file in files_to_process:
+                download_blob(_file, Path(files_directory_path,basename(_file)))
+
         list_of_files: list = get_files_in_directory(files_directory_path)
         
         if not check_if_list_Null(list_of_files):
@@ -93,10 +105,10 @@ if __name__ == "__main__":
                         result = None
 
                         values = {
-                            'dtlTicket': None,
-                            'dtlTicketType':  None,
-                            'dtlGEOCd': None,
-                            'dtlAllocMethod': None,
+                            'dtlTicket': None, #80
+                            'dtlTicketType':  None, #81
+                            'dtlGEOCd': None, #82
+                            'dtlAllocMethod': None, #84 
                         }
 
                         for counter in range(1, 9):
