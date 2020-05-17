@@ -12,8 +12,8 @@ from sqlalchemy.sql import text
 from openpyxl import load_workbook #xlsx files
 from openpyxl.styles import Font, Fill, PatternFill
 from pathlib import Path
-from os.path import basename
-from os import getcwd
+from os.path import basename, exists
+from os import getcwd, makedirs
 import sys
 
 if __name__ == "__main__":
@@ -21,6 +21,9 @@ if __name__ == "__main__":
     try:
 
         files_directory_path = Path(getcwd(),'data')
+
+        if not exists(files_directory_path):
+            makedirs('data')
         
         files_to_process = sub('microstrategyit','DataEngineering-appusma206_apps_sub')
 
