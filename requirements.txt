@@ -20,7 +20,7 @@ google-resumable-media==0.3.2
 googleapis-common-protos==1.5.9
 grpc-google-iam-v1==0.12.3
 grpcio==1.23.0
-httplib2==0.13.1
+httplib2==0.18.0
 idna==2.8
 jdcal==1.4.1
 jmespath==0.9.4
