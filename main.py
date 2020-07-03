@@ -25,11 +25,11 @@ if __name__ == "__main__":
         if not exists(files_directory_path):
             makedirs('data')
         
-        files_to_process = sub('microstrategyit','DataEngineering-appusma206_apps_sub')
+        #files_to_process = sub('microstrategyit','DataEngineering-appusma206_apps_sub')
 
-        if len(files_to_process) != 0:
-            for _file in files_to_process:
-                download_blob(_file, Path(files_directory_path,basename(_file)))
+        #if len(files_to_process) != 0:
+        #    for _file in files_to_process:
+        #        download_blob(_file, Path(files_directory_path,basename(_file)))
 
         list_of_files: list = get_files_in_directory(files_directory_path)
         

@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 .DS_Store
 
+# Vs Code
+.vscode
+
 # CSV files
 .csv
 
