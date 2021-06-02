@@ -39,6 +39,6 @@ s3transfer==0.2.1
 six==1.12.0
 SQLAlchemy==1.3.6
 uritemplate==3.0.0
-urllib3==1.25.8
+urllib3==1.26.5
 wincertstore==0.2
 xlrd==1.2.0
