@@ -1,0 +1,301 @@
+# TNSNAMES.ORA Network Configuration File:
+# UPDATED: FEB 27, 2007
+########################################################################
+# Change Log                                                           #
+########################################################################
+# Initials  # Date (YYYY/MM/DD)  # Notes                               #
+########################################################################
+# EMR       # 2006/09/27         # Official beginning                  #
+########################################################################
+# EMR       # 2006/09/27         # Changed B2B.DEV to B2BDEV.WORLD     #
+#           #                    # Changed B2B.QC to B2BQC.WORLD       #
+########################################################################
+# EMR       # 2007/02/27         # Added CLRPC and CLRTG               #
+########################################################################
+# EMR       # 2007/03/12         # Changed CLRTG to CLRDV6             #
+########################################################################
+# EMR       # 2007/03/28         # Added CNFGDV and CNFGQC             #
+########################################################################
+# EMR       # 2007/04/10         # Added RESMDV and RESMQC             #
+########################################################################
+# EMR       # 2007/08/01         # Added RESMD and RESMQ               #
+########################################################################
+# EMR       # 2007/10/01         # Added CLROB                         #
+########################################################################
+# EMR       # 2007/10/03         # Added RESMP                         #
+########################################################################
+# EMR       # 2007/10/03         # Added CNFGP                         #
+########################################################################
+# EMR       # 2007/12/18         # Added CRMST                         #
+########################################################################
+########################################################################
+# GDM       # 2008/03/21         # Changed Host of DWTG to QCDW        #
+########################################################################
+# RS        # 2008/05/02         # Changed Listener port for DWQC      #
+#				   from 1521 to 1523
+########################################################################
+# RS        # 2008/10/09         # Added ARCHQFIN		       #
+#				 # Removed ARCHERPR and ARCHERPD       #
+########################################################################
+# RS        # 2009/10/26         # Added IAASDR			       #
+########################################################################
+# JS        # 2010/04/08         # Updated BO40 host to orabo40        #
+########################################################################
+# JS        # 2010/04/09         # Updated VERT host to oravert        #
+########################################################################
+# JS        # 2010/04/09         # Updated B2B host to orab2b          #
+########################################################################
+# RS        # 2010/07/06         # Added RIMQC.WORLD entry             #
+########################################################################
+# RS        # 2010/07/06         # Added RIMPROD.WORLD entry           #
+########################################################################
+# JS        # 2010/07/30         # Removed Decomed DBs CSCP and CQSP   #
+########################################################################
+# RS	    # 2010/09/07	 # Added TOOLSPROD.WORLD	       #
+########################################################################
+# JS	    # 2010/09/07	 # Added HRMS.WORLD	               #
+########################################################################
+# EMR	    # 2010/06/22	 # Added OLPROD.WORLD	               #
+########################################################################
+# JS	    # 2011/07/15	 # Changed RIM to point to DW          #
+########################################################################
+# JS	    # 2011/11/09	 # Added gecits.ge.com domain to CCCP  #
+########################################################################
+# JS	    # 2011/11/09	 # Correted FNDFS_SD099FIN03.WORLD     #
+########################################################################
+# RS	    # 2012/02/15	 # Changed host for dwqc 	       #
+# 				   from qcdw to qcdw.compucom.local    #
+########################################################################
+# NM	    # 2012/02/27	 # Added the new Solix development     #
+# 				   instance  adfin.world               #
+########################################################################
+# VT        #2013/03/22          # Removed 11i QFIN added R12QFIN#
+#                                                                      #
+########################################################################
+
+ADFIN.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=sdl099ora01)(PORT=1533))
+                (CONNECT_DATA=(SID=ADFIN))
+            )
+AMD1.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORAAMD1)(PORT=1523))
+                (CONNECT_DATA=(SID=AMD1))
+            )
+APFIN.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=spl099ora01)(PORT=1533))
+                (CONNECT_DATA=(SID=APFIN))
+            )
+AQFIN.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=sql099ora01)(PORT=1533))
+                (CONNECT_DATA=(SID=AQFIN))
+            )
+ARCHQFIN.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=SNDFW06)(PORT=1522))
+                (CONNECT_DATA=(SID=ARCHQFIN))
+            )
+ARCHPFIN.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=SNDFW01)(PORT=1522))
+                (CONNECT_DATA=(SID=ARCHPFIN))
+            )
+B2B.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORAB2B)(PORT=1521))
+                (CONNECT_DATA=(SID=B2B))
+            )
+B2BDEV.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=newb2bdev.alt.compucom.local)(PORT=1523))
+                (CONNECT_DATA=(SID=B2B))
+            )
+B2BQC.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=newb2bqc.alt.compucom.local)(PORT=1523))
+                (CONNECT_DATA=(SID=B2B))
+            )
+BO40.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORABO40)(PORT=1521))
+                (CONNECT_DATA=(SID=BO40))
+            )
+
+CCCD.WORLD =(DESCRIPTION =
+            (ADDRESS = (PROTOCOL = TCP)(HOST = neworacccd.alt.compucom.local)(PORT = 1529))
+            (CONNECT_DATA = (SID = CCCD))
+           )
+CCCP.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=oracccp.alt.compucom.local)(PORT=1521))
+		(CONNECT_DATA=(SID=CCCP))
+            )
+CCCT.WORLD =  (DESCRIPTION =
+          (ADDRESS = (PROTOCOL = TCP)(HOST = oraccct.alt.compucom.local)(PORT = 1521))
+          (CONNECT_DATA = (SID = CCCT))
+           )
+CLRCP.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORACLRCP)(PORT=1521))
+		(CONNECT_DATA=(SID=CLRCP))
+	    )
+
+CLRDEV.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=oraclrdv6test.alt.compucom.local)(PORT=1534))
+		(CONNECT_DATA=(SID=CLRDEV))
+            )
+CLRPD.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORACLRPD)(PORT=1521))
+		(CONNECT_DATA=(SID=CLRPD))
+            )
+
+CLRST.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORACLRST)(PORT=1521))
+		(CONNECT_DATA=(SID=CLRST))
+            )
+
+DW.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=10.17.4.10)(PORT=1521))
+		(CONNECT_DATA=(SID=DW))
+            )
+
+DWDEV.WORLD=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=oradwdev.alt.compucom.local)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (GLOBAL_NAME=DW.world)
+      (SERVER=dedicated)
+      (SID=DW)
+    )
+  )
+
+DWQC.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=qcdw.compucom.local)(PORT=1523))
+		(CONNECT_DATA=(SID=DW))
+            )
+
+IAASDR.WORLD = (DESCRIPTION =
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORAIAASDR.compucom.local)(PORT=1522))
+                (CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=IAASDR.compucom.local))
+            )
+IAASST.WORLD = (DESCRIPTION =
+    		(ADDRESS = (PROTOCOL=TCP)(HOST=oraiaasst.compucom.local)(PORT=1531))
+    		(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=iaasst))
+	    )
+
+MSTRDEV.WORLD = (DESCRIPTION =
+                  (ADDRESS = (PROTOCOL = TCP)(HOST = mstrdev.alt.compucom.local)(PORT = 1527))
+                  (CONNECT_DATA =(SID = MSTRDEV))
+           )
+MSTRQC.WORLD = (DESCRIPTION =
+                  (ADDRESS = (PROTOCOL = TCP)(HOST = mstrqc.alt.compucom.local)(PORT = 1521))
+                  (CONNECT_DATA =(SID = MSTRQC))
+           )
+MSTR.WORLD =  (DESCRIPTION =
+                 (ADDRESS = (PROTOCOL = TCP)(HOST = mstr.alt.compucom.local)(PORT = 1521))
+                 (CONNECT_DATA =(SID = MSTR))
+           )
+
+OLUPGD2.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=oraolupgd2.alt.compucom.local)(PORT=1530))
+                (CONNECT_DATA=(SID=OLUPGD2))
+            )
+OLPROD.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=oraolprod.alt.compucom.local)(PORT=1521))
+                (CONNECT_DATA=(SID=OLPROD))
+            )
+
+OLTEST = (DESCRIPTION =
+          (ADDRESS=(PROTOCOL=TCP)(HOST=oraoltest.alt.compucom.local)(PORT = 1521))
+    	  (CONNECT_DATA=(SID = oltest))
+            )
+OUTB.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=SNDFW32)(PORT = 1535))
+                (CONNECT_DATA=(SID=OUTB))
+            )
+PFIN.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=OFINPFIN)(PORT=1521))
+                (CONNECT_DATA=(SID=PFIN))
+            )
+PFINNew.world = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=tcp)(HOST=sp099fin01.compucom.local)(PORT=1521))
+                (CONNECT_DATA=(SID=pfin))
+            )
+pfin= (DESCRIPTION=
+      (ADDRESS=(PROTOCOL=tcp)(HOST=spl099fin01.alt.compucom.local)(PORT=1521))
+      (CONNECT_DATA=
+      (SERVICE_NAME=pfin)
+      (INSTANCE_NAME=pfin)
+      ))
+
+DFIN.WORLD = (DESCRIPTION=
+             	(ADDRESS=(PROTOCOL=TCP)(HOST=sd099fin01.compucom.local)(PORT=1521))
+                (CONNECT_DATA=(SID=DFIN))
+            )
+
+QFIN.world=
+        (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=tcp)(HOST=sql099fin01.alt.compucom.local)(PORT=1521))
+            (CONNECT_DATA=
+                (SERVICE_NAME=qfin)
+                (INSTANCE_NAME=qfin)
+            )
+        )
+
+POS.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=POS)(PORT=1521))
+                (CONNECT_DATA=(SID=POS))
+            )
+POSDEV.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=oraposdev.alt.compucom.local)(PORT=1524))
+                (CONNECT_DATA=(SID=POS))
+            )
+POSQC.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=oraposqc.alt.compucom.local)(PORT=1521))
+                (CONNECT_DATA=(SID=POS))
+            )
+PROD.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=OFINPFIN)(PORT=1521))
+                (CONNECT_DATA=(SID=PFIN))
+            )
+
+VERT.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=ORAVERT)(PORT=1521))
+                (CONNECT_DATA=(SID=VERT))
+            )
+VERTDEV.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST= oravertdev.compucom.local)(PORT=1522))
+                (CONNECT_DATA=(SID=VERT))
+            )
+VERTQC.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=oravertqc.compucom.local)(PORT=1521))
+                (CONNECT_DATA=(SID=VERT))
+            )
+
+TOOLS.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL = TCP)(HOST = oratools)(PORT = 1528))
+                (CONNECT_DATA=(SID = TOOLS))
+            )
+HRDEV90.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=sdu99ps1)(PORT=1521))
+                (CONNECT_DATA=(SID=HRDEV90))
+            )
+HRDMO90.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=sdu99ps1)(PORT=1521))
+                (CONNECT_DATA=(SID=HRDMO90))
+            )
+HRMS.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=orahrms.alt.compucom.local)(PORT=1522))
+                (CONNECT_DATA=(SID=HRMS))
+            )
+HRQC.WORLD = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=TCP)(HOST=orahrqc)(PORT=1521))
+                (CONNECT_DATA=(SID=HRQC))
+            )
+dev1=
+        (DESCRIPTION=
+                (ADDRESS=(PROTOCOL=tcp)(HOST=spl099fin01.alt.compucom.local)(PORT=1521))
+            (CONNECT_DATA=
+                (SERVICE_NAME=dev1)
+                (INSTANCE_NAME=dev1)
+            )
+        )
+TOOLS = (DESCRIPTION=
+                (ADDRESS=(PROTOCOL = TCP)(HOST = oratools.compucom.local)(PORT = 1528))
+                (CONNECT_DATA=(SID = TOOLS))
+

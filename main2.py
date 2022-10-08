@@ -1,18 +1,17 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Created by Luis Fuentes  
-# To run: python main.py
+# To run: python main2.py
 
 from __future__ import annotations
-from typing import Optional
-from etl.DBConn import SQLServerConn, OracleConnection
-from etl.GeneralFunctions import (get_files_in_directory, check_if_list_Null, clean_string, is_int, 
-                                  to_gcs_bucket, delete_processed_file, sub, download_blob)
+from src.DBConn import SQLServerConn, OracleConnection
+from GeneralFunctions import (get_files_in_directory, check_if_list_Null, clean_string, is_int,
+                              to_gcs_bucket, delete_processed_file)
 from sqlalchemy.sql import text
 from openpyxl import load_workbook #xlsx files
-from openpyxl.styles import Font, Fill, PatternFill
+from openpyxl.styles import Font, PatternFill
 from pathlib import Path
-from os.path import basename, exists
+from os.path import exists
 from os import getcwd, makedirs
 import sys
 
